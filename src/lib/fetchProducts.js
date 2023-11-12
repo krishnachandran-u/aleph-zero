@@ -21,3 +21,14 @@ export async function selectUserProducts(username) {
     return [];
   }
 }
+
+export async function selectUserProductsWithProfile(username) {
+  try{
+    const { data } = await axios.get(`/api/selectUserProfile?username=${username}`)
+    return data;
+  }
+  catch(error){
+    console.log(error);
+    return [];
+  }
+}
